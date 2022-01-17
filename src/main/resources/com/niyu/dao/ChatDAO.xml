@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.niyu.dao.ChatDAO">
+    <resultMap id="chatResultMap" type="com.niyu.dataobject.ChatDO">
+        <id column="id" property="id"/>
+        <result column="sender" property="sender"></result>
+        <result column="receiver" property="receiver"></result>
+        <result column="gmt_created" property="gmtCreated"></result>
+    </resultMap>
+</mapper>
