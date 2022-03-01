@@ -12,7 +12,7 @@ import java.util.Date;
 @Document
 public class Users {
   @Id
-  private String id;
+  private String userId;
   @Indexed
   private String avatar;
   private String description;
@@ -21,12 +21,12 @@ public class Users {
   private String nickname;
   private String password;
   private ArrayList<String>  staredArticles;
-  private String userId;
   private String username;
   private ArrayList<String>  chatList;
   private String email;
   private ArrayList<String>  fans;
   private ArrayList<String>  follows;
   private Date lastPostTime;
-
+  private String msg;
+  private int status;
 }

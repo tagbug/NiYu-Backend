@@ -1,6 +1,7 @@
 package com.niyu.controller;
 
 import com.niyu.pojo.Tag;
+import com.niyu.pojo.Users;
 import com.niyu.service.impl.SideBarServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,6 +32,30 @@ public class SideBarController {
         Map map = new HashMap();
         List<Tag> recommends = sideBarService.getRecommend();
         map.put("recommends",recommends);
+        if(recommends!=null){
+            map.put("status",200);
+            map.put("msg","success");
+        }else{
+            map.put("status",404);
+            map.put("msg","fail");
+        }
+        return map;
+    }
+
+    @ResponseBody
+    @RequestMapping("/search/getActiveUser")
+    public Map getActiveUser(){
+        Map map = new HashMap();
+        List<Users> activeUsers = sideBarService.getActiveUser();
+        map.put("activeUsers",activeUsers);
+        if(activeUsers!=null){
+            map.put("status",200);
+            map.put("msg","success");
+        }else{
+            map.put("status",404);
+            map.put("msg","fail");
+        }
+
         return map;
     }
 }

@@ -39,7 +39,6 @@ public class SideBarServiceImpl implements SideBarService {
 
     @Override
     public List<Users> getActiveUser() {
-        Criteria criteria = new Criteria();
         Query query = new Query();
         query.with(Sort.by(
                 Sort.Order.desc("articleNum")
@@ -48,6 +47,10 @@ public class SideBarServiceImpl implements SideBarService {
         ));
 
         query.limit(3);
+        List<Users> users = mongoTemplate.find(query, Users.class);
+        if (users!=null){
+            return users;
+        }
         return null;
     }
 }

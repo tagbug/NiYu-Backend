@@ -11,9 +11,8 @@ import java.util.ArrayList;
 @Document
 public class Comment {
   @Id
-  private String id;
-  @Indexed
   private String authorId;
+  @Indexed
   private String content;
   private ArrayList<String> likerList;
   private long likes;
@@ -23,7 +22,6 @@ public class Comment {
   private String replyToUserId;
   private String reviewId;
   private ArrayList<String>  reviewList;
-
 
 
 }

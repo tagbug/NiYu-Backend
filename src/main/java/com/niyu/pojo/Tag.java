@@ -9,12 +9,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Tag {
   @Id
-  private String id;
+  private String topicId;
   @Indexed
   private long articleNum;
   private String tag;
   private String title;
-  private String topicId;
 
 
 
