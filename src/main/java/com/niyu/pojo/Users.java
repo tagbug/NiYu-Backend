@@ -5,6 +5,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 @Data
 @Document
 public class Users {
@@ -13,16 +16,17 @@ public class Users {
   @Indexed
   private String avatar;
   private String description;
-  private String likedArticles;
+  private Integer articleNum;
+  private ArrayList<String> likedArticles;
   private String nickname;
   private String password;
-  private String staredArticles;
+  private ArrayList<String>  staredArticles;
   private String userId;
   private String username;
-  private String chatList;
+  private ArrayList<String>  chatList;
   private String email;
-  private String fans;
-  private String follows;
-
+  private ArrayList<String>  fans;
+  private ArrayList<String>  follows;
+  private Date lastPostTime;
 
 }

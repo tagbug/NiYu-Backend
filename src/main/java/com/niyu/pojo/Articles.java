@@ -5,6 +5,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+
 @Data
 @Document
 public class Articles {
@@ -14,16 +16,16 @@ public class Articles {
   private String articleId;
   private String authorId;
   private String content;
-  private String images;
-  private String likerList;
+  private ArrayList<String> images;
+  private ArrayList<String>  likerList;
   private long likes;
   private String postDate;
   private String replyTo;
-  private String reviewList;
-  private String starerList;
-  private String tags;
+  private ArrayList<String>  reviewList;
+  private ArrayList<String>  starerList;
+  private ArrayList<String>  tags;
   private String available;
-  private String mentionList;
+  private ArrayList<String>  mentionList;
   private long reviews;
   private long stars;
 
