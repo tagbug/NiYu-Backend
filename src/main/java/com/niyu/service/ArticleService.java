@@ -27,7 +27,7 @@ public interface ArticleService {
      * 发布文章
      * @return
      */
-    Articles postArticle();
+    Articles postArticle(Articles articles);
 
     /**
      * 删除文章

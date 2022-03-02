@@ -3,9 +3,7 @@ package com.niyu.controller;
 import com.niyu.pojo.Articles;
 import com.niyu.service.impl.ArticleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -44,7 +42,38 @@ public class ArticleController {
             map.put("status",200);
             map.put("msg","success");
         }else{
-            map.put("status",404);
+            map.put("status",500);
+            map.put("msg","fail");
+        }
+        return map;
+    }
+
+    @PostMapping("/article/post")
+    public Map postArticle(@RequestBody Articles articles){
+        System.out.println(articles.toString());
+        Map map = new HashMap();
+        Articles postArticle = articleService.postArticle(articles);
+        System.out.println(articles.toString());
+        map.put("postArticle",postArticle);
+        if(postArticle!=null){
+            map.put("status",200);
+            map.put("msg","success");
+        }else{
+            map.put("status",500);
+            map.put("msg","fail");
+        }
+        return map;
+    }
+
+    @RequestMapping("/article/delete")
+    public Map deleteArticle(@RequestParam String articleId){
+        Map map = new HashMap();
+        long l = articleService.deleteArticle(articleId);
+        if(l==1){
+            map.put("status",200);
+            map.put("msg","success");
+        }else{
+            map.put("status",500);
             map.put("msg","fail");
         }
         return map;

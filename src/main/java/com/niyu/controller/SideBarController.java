@@ -36,7 +36,7 @@ public class SideBarController {
             map.put("status",200);
             map.put("msg","success");
         }else{
-            map.put("status",404);
+            map.put("status",500);
             map.put("msg","fail");
         }
         return map;
@@ -52,7 +52,7 @@ public class SideBarController {
             map.put("status",200);
             map.put("msg","success");
         }else{
-            map.put("status",404);
+            map.put("status",500);
             map.put("msg","fail");
         }
 

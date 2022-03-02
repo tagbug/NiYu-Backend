@@ -128,4 +128,18 @@ class NiyuApplicationTests {
 		long l = articleService.deleteArticle("2");
 		System.out.println(l);
 	}
+
+	@Test
+	void postArticle(){
+		Articles articles = new Articles();
+		articles.setAuthorId("5");
+		articles.setContent("bbb");
+		articles.setImages(new ArrayList<>());
+		articles.setMentionList(new ArrayList<>());
+		articles.setReplyTo("111");
+		articles.setTags(new ArrayList<>());
+
+		Articles articles1 = articleService.postArticle(articles);
+		System.out.println(articles1.toString());
+	}
 }
