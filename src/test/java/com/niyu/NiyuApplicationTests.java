@@ -108,7 +108,7 @@ class NiyuApplicationTests {
 	@Test
 	void insertArticle(){
 		Articles articles = new Articles();
-		articles.setArticleId("4");
+		articles.setArticleId("2");
 		articles.setAuthorId("3");
 		articles.setAvailable(true);
 		articles.setContent("aaaaa");
@@ -125,7 +125,7 @@ class NiyuApplicationTests {
 
 	@Test
 	void deleteArticle(){
-		long l = articleService.deleteArticle("1");
+		long l = articleService.deleteArticle("2");
 		System.out.println(l);
 	}
 }

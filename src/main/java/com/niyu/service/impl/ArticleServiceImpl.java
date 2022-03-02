@@ -21,8 +21,7 @@ public class ArticleServiceImpl implements ArticleService {
     private MongoTemplate mongoTemplate;
     @Override
     public Articles getArticleById(String articleId) {
-        Query query = new Query(Criteria.where("_id").is(articleId));
-        Articles article = mongoTemplate.findOne(query,Articles.class);
+        Articles article = mongoTemplate.findById(articleId,Articles.class);
         if(article!=null){
             return article;
         }
@@ -47,9 +46,8 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public long deleteArticle(String articleId) {
-        Query query = new Query(Criteria.where("_id").is(articleId));
-        mongoTemplate.find(query,Articles.class);
-        DeleteResult result = mongoTemplate.remove(1);
+        Articles article = mongoTemplate.findById(articleId,Articles.class);
+        DeleteResult result = mongoTemplate.remove(article);
         return result.getDeletedCount();
     }
 }
